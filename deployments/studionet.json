@@ -1,0 +1,137 @@
+{
+  "network": "studionet",
+  "rpc": "https://studio.genlayer.com/api",
+  "contract": "0x580D1109e5a6710aaf5cAF71e03726793e6Eb057",
+  "generated_at": "2026-10-26T08:00:37.110Z",
+  "transactions": [
+    {
+      "label": "deploy contract",
+      "hash": "0xa6b57c24a9a44416acdd32baf258588456e4b4de6e010942db30d152aa0b788e",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected_ok": true,
+      "return_value": "null",
+      "error": null
+    },
+    {
+      "label": "submit_claim #0 (true claim)",
+      "hash": "0x088a2aae413bd81d46a7d06fab73cd29f190988c3d2e3cd286a57823d266293a",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected_ok": true,
+      "return_value": "0",
+      "error": null
+    },
+    {
+      "label": "check_claim #0",
+      "hash": "0x2ccac0f09a35e38c04305753612be4497f1fb78983c65256fbc31cf6a85f7fe9",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected_ok": true,
+      "return_value": "{\"claim_id\":0\"decisive_url\":\"https://en.wikipedia.org/api/rest_v1/page/summary/Bitcoin\"\"quote\":\"Use of bitcoin as a currency began in 2009, with the release of its open-source implementation.\"\"verdict\":\"TRUE\"}",
+      "error": null
+    },
+    {
+      "label": "check_claim #0 again (must fail: final)",
+      "hash": "0x4317d92dd25261d803f9ede8a64b8a2a3c6c3f2cb32525862f7c4ec5f3b68c61",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "ERROR",
+      "ok": false,
+      "expected_ok": false,
+      "return_value": null,
+      "error": "Contract execution failed (ERROR)"
+    },
+    {
+      "label": "submit_claim #1 (false claim)",
+      "hash": "0x48dbaa86e7a54f84504861839e6b2f38b09f64a8b561246381dcc4428e170713",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected_ok": true,
+      "return_value": "1",
+      "error": null
+    },
+    {
+      "label": "check_claim #1",
+      "hash": "0xd984d27f98e022b46df26c9a6e150d766dde19ffa366183faa0c61a029938d48",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected_ok": true,
+      "return_value": "{\"claim_id\":1\"decisive_url\":\"https://en.wikipedia.org/api/rest_v1/page/summary/Bitcoin\"\"quote\":\"Bitcoin is the first decentralized cryptocurrency. Based on a free-market ideology, bitcoin was invented in 2008 when an unknown person published a white paper under the pseudonym of Satoshi Nakamoto.\"\"verdict\":\"FALSE\"}",
+      "error": null
+    },
+    {
+      "label": "submit_claim #2 (evidence silent)",
+      "hash": "0x2f1f2c923cbba7a1a5cc4131a9fbe6ca254863b846bc38c3b3d9f3b2c949bc29",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected_ok": true,
+      "return_value": "2",
+      "error": null
+    },
+    {
+      "label": "check_claim #2",
+      "hash": "0xcce110d404a8ea3060ce5d8d90b0e89c2506984c15f575835069059924236bca",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected_ok": true,
+      "return_value": "{\"claim_id\":2\"decisive_url\":\"\"\"quote\":\"\"\"verdict\":\"UNVERIFIABLE\"}",
+      "error": null
+    }
+  ],
+  "final_state": [
+    {
+      "checked_by": "0x46fbed95cf3fb55c8dddfc40e26c6cc0aa10000a",
+      "claim": "Bitcoin began to be used as a currency in 2009.",
+      "decisive_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Bitcoin",
+      "evidence_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Bitcoin",
+      "explanation": "Source 1 directly states that bitcoin's use as a currency began in 2009. This exactly matches the claim.",
+      "id": 0,
+      "quote": "Use of bitcoin as a currency began in 2009, with the release of its open-source implementation.",
+      "second_evidence_url": "",
+      "status": "CHECKED",
+      "submitter": "0x46fbed95cf3fb55c8dddfc40e26c6cc0aa10000a",
+      "verdict": "TRUE"
+    },
+    {
+      "checked_by": "0x46fbed95cf3fb55c8dddfc40e26c6cc0aa10000a",
+      "claim": "The Bitcoin white paper was published in 2011.",
+      "decisive_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Bitcoin",
+      "evidence_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Bitcoin",
+      "explanation": "The claim says the Bitcoin white paper was published in 2011, but Source 1 states it was published in 2008. Therefore the claim is contradicted by the source.",
+      "id": 1,
+      "quote": "Bitcoin is the first decentralized cryptocurrency. Based on a free-market ideology, bitcoin was invented in 2008 when an unknown person published a white paper under the pseudonym of Satoshi Nakamoto.",
+      "second_evidence_url": "",
+      "status": "CHECKED",
+      "submitter": "0x46fbed95cf3fb55c8dddfc40e26c6cc0aa10000a",
+      "verdict": "FALSE"
+    },
+    {
+      "checked_by": "0x46fbed95cf3fb55c8dddfc40e26c6cc0aa10000a",
+      "claim": "Bitcoin's creator lives in Tokyo.",
+      "decisive_url": "",
+      "evidence_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Ethereum",
+      "explanation": "Neither source provides information about the location of Bitcoin's creator, making the claim unverifiable based on the given evidence.",
+      "id": 2,
+      "quote": "",
+      "second_evidence_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Bitcoin",
+      "status": "CHECKED",
+      "submitter": "0x46fbed95cf3fb55c8dddfc40e26c6cc0aa10000a",
+      "verdict": "UNVERIFIABLE"
+    }
+  ]
+}

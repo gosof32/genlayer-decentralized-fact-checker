@@ -1,0 +1,11 @@
+{
+  "name": "genlayer-decentralized-fact-checker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lifecycle:studionet": "node scripts/lifecycle-studionet.mjs"
+  },
+  "dependencies": {
+    "genlayer-js": "^1.1.8"
+  }
+}
